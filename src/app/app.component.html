@@ -1,0 +1,71 @@
+<div class="jumbotron">
+  <h1 align="center">Elogroup - Formulário</h1>
+
+  <div style="margin-left: 25%; margin-right: 25%">
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+    <input class="form-control" type="text" id="nome" [(ngModel)]="nome">
+  </div>
+  <div class="form-group">
+    <label for="telefone">Telefone:</label>
+    <input class="form-control" mask="00 - 00000000" type="text" id="telefone" [(ngModel)]="telefone">
+  </div>
+  <div class="form-group">
+    <label for="comoNosAchou">Como nos conheceu:</label>
+    <select id="comoNosAchou" class="form-control" [(ngModel)]="comoNosEncontrou">
+      <option></option>
+      <option>tv</option>
+      <option>Internet</option>
+      <option>Outros</option>
+    </select>
+  </div>
+  <p>Possui rede social:</p>
+  <div class="form-check">
+    <input type="radio" class="form-check-input" name="redeSocial" id="sim" value="Sim" [(ngModel)]="redeSocial"> <label
+      FOR="sim">Sim</label>
+  </div>
+
+  <div class="form-check">
+    <input type="radio" class="form-check-input" name="redeSocial" id="nao" value="Não" [(ngModel)]="redeSocial"> <label
+      for="nao">Não</label>
+  </div>
+  <div *ngIf="redeSocial=='Sim'">
+    <p>Quais:</p>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" [(ngModel)]="qualRedeSocial[0]" value="facebock"
+             id="facebock">
+      <label for="facebock">Facebock</label>
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" [(ngModel)]="qualRedeSocial[1]" value="Instagran"
+             id="instagran"><label
+      for="instagran">Instagran</label>
+
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" [(ngModel)]="qualRedeSocial[2]" value="Linkedin"
+             id="linkedin"><label for="linkedin">Linkedin</label>
+    </div>
+
+  </div>
+  <div *ngIf="mensagem" class="alert alert-danger" role="alert">
+    {{mensagem}}
+  </div>
+  <button type="button" (click)="enviarFormulario()" class="btn btn-primary btn-lg" [disabled]="desativarBotao">Enviar
+  </button>
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+          integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+          integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+          crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+          integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+          crossorigin="anonymous"></script>
+
+        </div>
+</div>
